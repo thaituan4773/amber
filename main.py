@@ -62,8 +62,8 @@ def main():
         # 5. Delete old files (ONLY for updated articles)
         old_file_ids = []
 
-        for article_id, file_id in uploaded_files.items():
-            if article_id in state and "file_id" in state[article_id]:
+        for article_id in uploaded_files.keys():
+            if article_id in state:
                 old_file_ids.append(state[article_id]["file_id"])
 
         if old_file_ids:
