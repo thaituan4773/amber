@@ -219,3 +219,6 @@ __marimo__/
 
 # article content
 articles
+
+# state file
+state.json

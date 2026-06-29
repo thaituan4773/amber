@@ -14,4 +14,4 @@ def save_state(state: dict):
 # Check if an article has changed based on its ID and updated_at timestamp
 def has_changed(article: dict, state: dict) -> bool:
     article_id = str(article["id"])
-    return state.get(article_id) != article["updated_at"]
+    return article["updated_at"] != state[article_id]["updated_at"]
