@@ -4,7 +4,7 @@ class ZendeskScraper:
     def __init__(self, base_url: str):
         self.base_url = base_url
 
-    def get_all_articles(self):
+    def get_all_articles(self) -> list[dict]:
         url = f"{self.base_url}/api/v2/help_center/articles.json"
         articles = []
         while url:

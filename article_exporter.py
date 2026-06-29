@@ -10,8 +10,8 @@ def slugify(title: str) -> str:
     title = re.sub(r"^-+|-+$", "", title)     # trim leading/trailing -
     return title
 
-# save articles to markdown files
 def save_articles_to_files(articles: list):
+    saved_files = []
     for article in articles:
         slug = slugify(article['title'])
         file_path = ARTICLES_DIR / f"{slug}.md"
@@ -20,3 +20,5 @@ def save_articles_to_files(articles: list):
             f.write(f"**URL:** {article['html_url']}\n\n")
             f.write(f"**Last Updated:** {article['updated_at']}\n\n")
             f.write(markdownify(article['body']))
+        saved_files.append(file_path)
+    return saved_files
