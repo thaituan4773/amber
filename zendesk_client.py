@@ -17,7 +17,6 @@ class ZendeskScraper:
             for article in data["articles"]:
                 articles.append({
                     "id": article["id"],
-                    "url": article["url"],
                     "html_url": article["html_url"],
                     "updated_at": article["updated_at"],
                     "title": article["title"],
